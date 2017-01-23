@@ -4,7 +4,7 @@ const Header = () => {
 
     return(
         <div className="header">
-            <h1>The Ground Up React/Redux</h1>
+            <h1>View<b>Tube:</b> A Minimalistic YouTube Web Client</h1>
         </div>
     )
 }

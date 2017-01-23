@@ -2,13 +2,19 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Header from './header.component';
+import SearchBar from './search-bar.component';
+import VideoDetail from './video-detail.component';
+import VideoList from './video-list.component';
 
 const App = (props) => {
     return (
         <div className="app">
             <Header />
-            <Link to="/">Home</Link> &nbsp; <Link to="test">Test Route</Link>
-            {props.children}
+            <SearchBar />
+            <div className="row">
+              <VideoDetail />
+              <VideoList />
+            </div>
         </div>
     );
 };
