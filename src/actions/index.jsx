@@ -1,6 +1,7 @@
 import YTSearch from 'youtube-api-search';
 
 export const FETCH_VIDEOS = 'FETCH_VIDEOS';
+export const VIEW_VIDEO = 'VIEW_VIDEO';
 
 // YouTube api credentials
 const API_KEY = 'AIzaSyBXECxVWEZzSo6A53ZHGxAUsPRHdGs4-Ms';
@@ -14,4 +15,8 @@ export function fetchVideos(searchTerm) {
       })
     });
   }
+}
+
+export function viewVideo(video) {
+  console.log(video);
 }
