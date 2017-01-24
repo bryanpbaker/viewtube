@@ -7,10 +7,16 @@ import { fetchVideos } from '../actions/index';
 class SearchBar extends Component {
   constructor(props) {
     super(props);
+
+    props.fetchVideos('Cats');
   }
-  
+
+  componentDidUpdate() {
+    console.log(this.props.videoList);
+  }
+
   render() {
-    const videoSearch = _.debounce((term) => { this.props.fetchVideos(term) }, 300);
+    const videoSearch = _.debounce((term) => { this.props.fetchVideos(term) }, 400);
 
     return(
       <div className="search-bar">
@@ -27,14 +33,8 @@ class SearchBar extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    videoList: state.videoList
-  };
-}
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchVideos }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
