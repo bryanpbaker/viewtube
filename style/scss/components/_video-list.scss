@@ -5,16 +5,13 @@
   .img-container{
     margin-bottom: 0;
     overflow: hidden;
+    padding: 0;
 
     img{
       height: 100%;
       margin-bottom: 0;
       object-fit: cover;
       object-position: center;
-    }
-
-    @media(min-width: 992px){
-      padding: 0;
     }
   }
 

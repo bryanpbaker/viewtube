@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVideos } from '../actions/index';
 
+import VideoListItem from './video-list-item.component';
+
 class VideoList extends Component {
   constructor(props) {
     super(props);
@@ -29,23 +31,6 @@ class VideoList extends Component {
       )
     }
   }
-}
-
-const VideoListItem = (props) => {
-  return(
-    <div className="video-list-item clearfix">
-      <div className="col-xs-12 col-md-3 img-container">
-        <img
-          src={props.thumbnail}
-          alt="{props.title}"/>
-      </div>
-      <div className="col-xs-12 col-md-9">
-        <h5>{props.title}</h5>
-        <span className="channel">{props.channelTitle}</span>
-        <p>{props.description}</p>
-      </div>
-    </div>
-  )
 }
 
 function mapStateToProps(state) {
