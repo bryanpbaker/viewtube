@@ -11,6 +11,10 @@ class SearchBar extends Component {
     props.fetchVideos('Cats');
   }
 
+  componentDidMount() {
+    this.refs.searchInput.focus();
+  }
+
   componentDidUpdate() {
     console.log(this.props.videoList);
   }
@@ -21,6 +25,7 @@ class SearchBar extends Component {
     return(
       <div className="search-bar">
         <input
+          ref="searchInput"
           className="form-control"
           type="text"
           onChange={(event) => videoSearch(event.target.value)}
