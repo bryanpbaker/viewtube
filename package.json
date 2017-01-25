@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "webpack-dev-server",
-    "postinstall": "webpack -p"
+    "local": "webpack-dev-server"
   },
   "author": "Bryan P. Baker",
   "license": "ISC",
