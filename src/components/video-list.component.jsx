@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchVideos, viewVideo } from '../actions/index';
+import { fetchVideos } from '../actions/index';
+import { viewVideo } from '../actions/index';
 
 class VideoList extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidUpdate() {
-    console.log(this.props.viewVideo);
-  }
-
   render() {
-    const _self = this;
     if(this.props.videoList) {
       const videos = this.props.videoList.map((video) => {
         return (
@@ -23,7 +19,8 @@ class VideoList extends Component {
             thumbnail={video.snippet.thumbnails.default.url}
             channelTitle={video.snippet.channelTitle}
             description={video.snippet.description}
-            viewVideo={_self.props.viewVideo}
+            video={video}
+            viewVideo={this.props.viewVideo}
           />
         )
       });
@@ -39,7 +36,7 @@ class VideoList extends Component {
 
 const VideoListItem = (props) => {
   return(
-    <div className="video-list-item clearfix" onClick={props.viewVideo}>
+    <div className="video-list-item clearfix" onClick={() => props.viewVideo(props.video)}>
       <div className="col-xs-3 img-container">
         <img
           src={props.thumbnail}

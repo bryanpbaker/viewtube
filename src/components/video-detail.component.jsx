@@ -8,11 +8,23 @@ class VideoDetail extends Component {
   }
 
   render() {
+    if (!this.props.activeVideo) {
+      return (
+        <div className="video-detail col-md-8">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.youtube.com/embed/5dsGWM5XGdg" frameBorder="0" allowFullScreen></iframe>
+          </div>
+          <h2>Cats are so funny you will die laughing - Funny cat compilation</h2>
+        </div>
+      )
+    }
+
     return(
       <div className="video-detail col-md-8">
         <div className="embed-responsive embed-responsive-16by9">
-          <iframe src="https://www.youtube.com/embed/35jmCmjFxsM" frameBorder="0" allowFullScreen></iframe>
+          <iframe src={`https://www.youtube.com/embed/${this.props.activeVideo.id.videoId}`} frameBorder="0" allowFullScreen></iframe>
         </div>
+        <h2>{this.props.activeVideo.snippet.title}</h2>
       </div>
     )
   }
@@ -20,12 +32,9 @@ class VideoDetail extends Component {
 
 function mapStateToProps(state) {
   return {
-    activeVideo: state.activeVideo
+    activeVideo: state.activeVideo,
+    videoList: state.videoList
   };
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ fetchVideos }, dispatch);
-// }
 
 export default connect(mapStateToProps)(VideoDetail);

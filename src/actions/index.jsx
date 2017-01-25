@@ -18,5 +18,8 @@ export function fetchVideos(searchTerm) {
 }
 
 export function viewVideo(video) {
-  console.log(video);
+  return {
+    type: VIEW_VIDEO,
+    payload: video
+  }
 }
