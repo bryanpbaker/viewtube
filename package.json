@@ -28,7 +28,6 @@
     "react-hot-loader": "^3.0.0-beta.2",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
@@ -42,6 +41,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
     "redux": "^3.0.4",
-    "superagent": "^2.1.0"
+    "superagent": "^2.1.0",
+    "webpack": "^1.12.9",
   }
 }
